@@ -5,10 +5,11 @@ using UnityEngine;
 public class Wall : MonoBehaviour
 {
     public GameObject wall;
-    private float   speed = 30f;
+    public float   speed = 70f;
      Rigidbody wRb;
 
     public bool activated;
+    public Collider [] shapes;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class Wall : MonoBehaviour
     void Update()
     {
         if (activated == true){
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
             //Debug.Log("Hello");
 
            
