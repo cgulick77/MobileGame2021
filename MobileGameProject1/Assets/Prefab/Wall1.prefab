@@ -95,5 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 2832530444103363888}
+  speed: 70
   activated: 1
+  shapeActivated: 1
   shapes: []
+  Cone1: {fileID: 0}
+  Cube1: {fileID: 0}
+  Donut1: {fileID: 0}

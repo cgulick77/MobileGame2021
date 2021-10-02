@@ -207,7 +207,11 @@ MonoBehaviour:
   wall: {fileID: 86169803}
   speed: 30
   activated: 0
+  shapeActivated: 0
   shapes: []
+  Cone1: {fileID: 0}
+  Cube1: {fileID: 0}
+  Donut1: {fileID: 0}
 --- !u!65 &86169805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -452,6 +456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PYCube
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d460f9591e7b3e145a02d67f152e914a, type: 3}
+      propertyPath: m_TagString
+      value: Cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d460f9591e7b3e145a02d67f152e914a, type: 3}
 --- !u!1 &213658149
@@ -608,10 +616,14 @@ MonoBehaviour:
   wall: {fileID: 273146075}
   speed: 30
   activated: 0
+  shapeActivated: 0
   shapes:
   - {fileID: 273146078}
   - {fileID: 273146077}
   - {fileID: 273146076}
+  Cone1: {fileID: 273146076}
+  Cube1: {fileID: 273146077}
+  Donut1: {fileID: 273146078}
 --- !u!1 &320599037
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +659,11 @@ MonoBehaviour:
   wall: {fileID: 320599037}
   speed: 30
   activated: 0
+  shapeActivated: 0
   shapes: []
+  Cone1: {fileID: 0}
+  Cube1: {fileID: 0}
+  Donut1: {fileID: 0}
 --- !u!65 &320599039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -780,6 +796,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 371fe332ca52ddd4a96f26a262def014, type: 3}
       propertyPath: m_Name
       value: PYCone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 371fe332ca52ddd4a96f26a262def014, type: 3}
+      propertyPath: m_TagString
+      value: Cone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 371fe332ca52ddd4a96f26a262def014, type: 3}
@@ -1226,7 +1246,11 @@ MonoBehaviour:
   wall: {fileID: 788167531}
   speed: 30
   activated: 0
+  shapeActivated: 0
   shapes: []
+  Cone1: {fileID: 0}
+  Cube1: {fileID: 0}
+  Donut1: {fileID: 0}
 --- !u!65 &788167533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1599,6 +1623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PYDonut
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 708203501ac4c7c47955abe6c19a5023, type: 3}
+      propertyPath: m_TagString
+      value: Donut
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 708203501ac4c7c47955abe6c19a5023, type: 3}
 --- !u!1 &1497852517
@@ -1856,7 +1884,11 @@ MonoBehaviour:
   wall: {fileID: 1675101817}
   speed: 30
   activated: 0
+  shapeActivated: 0
   shapes: []
+  Cone1: {fileID: 0}
+  Cube1: {fileID: 0}
+  Donut1: {fileID: 0}
 --- !u!65 &1675101819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2664,7 +2696,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4670612715699000196, guid: ad4873b2fbb4d8f499d1ed70aa68539b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad4873b2fbb4d8f499d1ed70aa68539b, type: 3}
 --- !u!1001 &3847816052807917019
 PrefabInstance:

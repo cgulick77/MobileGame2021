@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WallSpawner : MonoBehaviour
 {
+    // Spawns one of the four walls to spawn.
     public GameObject [] walls;
     public GameObject spawnPos;
     public bool maxWalls = false;
@@ -32,7 +33,7 @@ public class WallSpawner : MonoBehaviour
         
         switch (wallLimit)
         {
-            case 10:
+            case 1:
            maxWalls = true;
             break;
         }
