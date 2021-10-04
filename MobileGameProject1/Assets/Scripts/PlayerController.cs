@@ -12,15 +12,22 @@ public class PlayerController : MonoBehaviour
     private bool rightPos;
     private bool midPos;
     private int row;
+    public GameObject Cone;
+    public GameObject Cube;
+    public GameObject Donut;
+    public int playerShape;
+    
 
-    public GameObject [] playerShapes;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //Sets players position to the middle lane and sets its initial shape
         player.transform.position = posMid.transform.position;
+        StartCoroutine("ShapePicker");
+        
     }
 
     // Update is called once per frame
@@ -47,5 +54,32 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+    
     }
+     IEnumerator ShapePicker()
+        {
+             // Uses Random.Range to pick the shape. Thne uses a switch statement to activate the shape and keep the other deactivated.
+        playerShape = Random.Range(1,3);
+
+        switch (playerShape)
+        {
+            case 1:
+                Cone.SetActive(true);
+                Cube.SetActive(false);
+                Donut.SetActive(false);
+                break;
+            case 2:
+                Cone.SetActive(false);
+                Cube.SetActive(true);
+                Donut.SetActive(false);
+                break;
+            case 3:
+                Cone.SetActive(false);
+                Cube.SetActive(false);
+                Donut.SetActive(true);
+                break;
+                
+        }
+        yield return null;
+        }
 }
