@@ -33,6 +33,7 @@ public class Wall : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Enable all the 
     void Update()
     {
         if (activated == true){
@@ -64,14 +65,23 @@ public class Wall : MonoBehaviour
     }
 
       private void OnCollisionEnter(Collision collision) {
-          if ((Cone1.gameObject.CompareTag("Cone")) && (Cone1.enabled == true))
+          if (collision.gameObject.CompareTag("Cone"))
           {
               Debug.Log("Cone");
           }
-          else
+          if (collision.gameObject.CompareTag("Cube"))
           {
-              Debug.Log("Wrong");
+              Debug.Log("Cube");
           }
+           if (collision.gameObject.CompareTag("Donut"))
+          {
+              Debug.Log("Donut");
+          }
+          else 
+          {
+              
+          }
+         
          
       }
 

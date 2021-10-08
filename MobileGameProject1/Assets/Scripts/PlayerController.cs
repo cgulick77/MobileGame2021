@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour
     
 
 
-
+    // This script controlls the player. 
+    // 1:Sets Players position to the middle lane 2:Runs the coroutine "ShapePicker", which choses the shape the player turns into 1 of the three shapes. Cube, Donut, and cone
+    // 3:Checks for the players input
+    
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +62,7 @@ public class PlayerController : MonoBehaviour
      IEnumerator ShapePicker()
         {
              // Uses Random.Range to pick the shape. Thne uses a switch statement to activate the shape and keep the other deactivated.
-        playerShape = Random.Range(1,3);
+        playerShape = Random.Range(1,4);
 
         switch (playerShape)
         {
