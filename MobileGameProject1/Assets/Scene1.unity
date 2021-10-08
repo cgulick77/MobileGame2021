@@ -578,8 +578,13 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1.4681993, y: 3.8194022, z: 3.923442}
   m_Center: {x: 0.36097902, y: -3.8810666, z: 4.9111648}
+=======
+  m_Size: {x: 20.975279, y: 3.8194022, z: 3.923442}
+  m_Center: {x: 10.114521, y: -3.8810666, z: 4.9111648}
+>>>>>>> main
 --- !u!65 &273146077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -591,8 +596,13 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1.531492, y: 3.1120877, z: 3.1223128}
   m_Center: {x: 0.50596136, y: -3.891804, z: -0.008212566}
+=======
+  m_Size: {x: 20.958273, y: 3.1120877, z: 3.1223128}
+  m_Center: {x: 10.219355, y: -3.891804, z: -0.008212566}
+>>>>>>> main
 --- !u!65 &273146078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -604,8 +614,13 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1.0138304, y: 2.8301945, z: 3.2167323}
   m_Center: {x: 0.27503914, y: -4.041406, z: -5.417762}
+=======
+  m_Size: {x: 20.808222, y: 2.8301945, z: 3.2167323}
+  m_Center: {x: 10.172237, y: -4.041406, z: -5.417762}
+>>>>>>> main
 --- !u!114 &273146079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,9 +641,15 @@ MonoBehaviour:
   Cube1: {fileID: 273146077}
   Donut1: {fileID: 273146076}
   playerController: {fileID: 1984743486}
+<<<<<<< HEAD
   Wall1: {fileID: 273146080}
 --- !u!65 &273146080
 BoxCollider:
+=======
+  Wall1: {fileID: 273146083}
+--- !u!64 &273146083
+MeshCollider:
+>>>>>>> main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -636,6 +657,7 @@ BoxCollider:
   m_GameObject: {fileID: 273146075}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+<<<<<<< HEAD
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.34502396, y: 11.999998, z: 15.000004}
@@ -656,6 +678,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+=======
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6375708778553226300, guid: e6fddc43831bb0c4e82267d768a9bce8, type: 3}
+>>>>>>> main
 --- !u!1 &320599037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1448,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1001 &965390597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1556,6 +1586,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20.975279, y: 3.8194022, z: 3.923442}
   m_Center: {x: 10.114521, y: -3.8810666, z: 4.9111648}
+=======
+>>>>>>> main
 --- !u!1001 &1166906667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1641,6 +1673,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3613567641014311022, guid: 371fe332ca52ddd4a96f26a262def014, type: 3}
+<<<<<<< HEAD
 --- !u!54 &1248537114
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1657,6 +1690,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+=======
+>>>>>>> main
 --- !u!1 &1272083475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2536,11 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
+<<<<<<< HEAD
   m_Constraints: 126
+=======
+  m_Constraints: 112
+>>>>>>> main
   m_CollisionDetection: 0
 --- !u!1 &2082698507 stripped
 GameObject:
@@ -2521,12 +2560,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082698507}
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 0
+=======
+  m_IsTrigger: 1
+>>>>>>> main
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -227272712135852155, guid: 708203501ac4c7c47955abe6c19a5023, type: 3}
+<<<<<<< HEAD
 --- !u!54 &2082698512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2543,6 +2587,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+>>>>>>> main
 --- !u!1 &2130624768
 GameObject:
   m_ObjectHideFlags: 0
