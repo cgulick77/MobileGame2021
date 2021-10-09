@@ -16,12 +16,15 @@ public class Wall : MonoBehaviour
     private PlayerController playerControllerScript;
     public GameObject playerController;
     private int holeNum;
+    private ShapeChecker shapeCheckerScript;
+    public GameObject checker;
 
     public Collider Wall1;
 
     
     void Awake() {
         playerControllerScript = playerController.GetComponent<PlayerController>();
+        shapeCheckerScript = checker.GetComponent<ShapeChecker>();
     }
     // Start is called before the first frame update
     void Start()
@@ -67,14 +70,17 @@ public class Wall : MonoBehaviour
       private void OnCollisionEnter(Collision collision) {
           if (collision.gameObject.CompareTag("Cone"))
           {
+              shapeCheckerScript.wallChecker.isTrigger = true;
               Debug.Log("Cone");
           }
           if (collision.gameObject.CompareTag("Cube"))
           {
+              shapeCheckerScript.wallChecker.isTrigger = true;
               Debug.Log("Cube");
           }
            if (collision.gameObject.CompareTag("Donut"))
           {
+              shapeCheckerScript.wallChecker.isTrigger = true;
               Debug.Log("Donut");
           }
           else 
