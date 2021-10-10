@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         }
     
     }
+
      IEnumerator ShapePicker()
         {
              // Uses Random.Range to pick the shape. Thne uses a switch statement to activate the shape and keep the other deactivated.

@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 116639525270935951}
   - component: {fileID: 3905105293281089066}
   - component: {fileID: 1285021071012307680}
+  - component: {fileID: 8570856933652178727}
+  - component: {fileID: 3289652352472409154}
+  - component: {fileID: 7479332476607582083}
+  - component: {fileID: 3820414671563207537}
+  - component: {fileID: 4156382550457712521}
   m_Layer: 0
   m_Name: Wall2
   m_TagString: Untagged
@@ -81,3 +86,79 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &8570856933652178727
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780727658047275829}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &3289652352472409154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780727658047275829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4814223, y: 2.891088, z: 2.9999497}
+  m_Center: {x: 0.5537771, y: -3.7437942, z: 4.8922453}
+--- !u!65 &7479332476607582083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780727658047275829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42069992, y: 3.7043972, z: 3.906919}
+  m_Center: {x: 0.4921818, y: -3.8722124, z: 0.03906393}
+--- !u!65 &3820414671563207537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780727658047275829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36175522, y: 3.1513052, z: 3.2167323}
+  m_Center: {x: 0.4782512, y: -3.8808503, z: -5.417762}
+--- !u!114 &4156382550457712521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780727658047275829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676537abf5736914395d32c59dd6a684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 0}
+  speed: 30
+  activated: 1
+  shapeActivated: 0
+  Cone1: {fileID: 3820414671563207537}
+  Cube1: {fileID: 3289652352472409154}
+  Donut1: {fileID: 7479332476607582083}
+  playerController: {fileID: 0}
+  checker: {fileID: 0}

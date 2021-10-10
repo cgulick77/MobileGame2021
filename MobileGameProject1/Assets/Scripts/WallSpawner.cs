@@ -12,36 +12,44 @@ public class WallSpawner : MonoBehaviour
     private Wall wallscript;
     public int wallLimit = 0;
 
+    public int startDelay = 2;
+    public int repeatRate = 3;
+   
+
     // Start is called before the first frame update
     void Start()
     {
         wallscript = GetComponent<Wall>();
+        InvokeRepeating("WallRando", startDelay, repeatRate);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Picks a random wall from the list
-        int randomWall = Random.Range(0, walls.Length);
+        
         //When "activated" is true it starts the script.
-        //Make couroutine
+        
+        // Creates walls, Everytime it makes wall it adds 1 to the wall Limit, if the wall limit == the max walls it stops
         if ((activated == true) && (maxWalls == false)){
-            Instantiate(walls[randomWall], spawnPos.transform.position, spawnPos.transform.rotation);
-            wallLimit++;
             
+            //activated = false;
         }
         
         switch (wallLimit)
         {
-            case 1:
+            case 5:
            maxWalls = true;
             break;
         }
-    }
-
-    
-
-    void WallRng(){
+        
         
     }
+  
+
+        void WallRando()
+        {
+            int randomWall = Random.Range(0, walls.Length);
+            Instantiate(walls[randomWall], spawnPos.transform.position, spawnPos.transform.rotation);
+        }
+
 }

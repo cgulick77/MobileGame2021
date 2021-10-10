@@ -19,9 +19,6 @@ public class Wall : MonoBehaviour
     private ShapeChecker shapeCheckerScript;
     public GameObject checker;
 
-    public Collider Wall1;
-
-    
     void Awake() {
         playerControllerScript = playerController.GetComponent<PlayerController>();
         shapeCheckerScript = checker.GetComponent<ShapeChecker>();
@@ -30,7 +27,7 @@ public class Wall : MonoBehaviour
     void Start()
     {
         wRb = GetComponent<Rigidbody>();
-        activated = true;
+        //activated = true;
 
          
     }
@@ -67,25 +64,12 @@ public class Wall : MonoBehaviour
 
     }
 
+    // Detects when the player collides with the correct hole for its shape
       private void OnCollisionEnter(Collision collision) {
-          if (collision.gameObject.CompareTag("Cone"))
+          if (collision.gameObject.layer == 8)
           {
-              shapeCheckerScript.wallChecker.isTrigger = true;
-              Debug.Log("Cone");
-          }
-          if (collision.gameObject.CompareTag("Cube"))
-          {
-              shapeCheckerScript.wallChecker.isTrigger = true;
-              Debug.Log("Cube");
-          }
-           if (collision.gameObject.CompareTag("Donut"))
-          {
-              shapeCheckerScript.wallChecker.isTrigger = true;
-              Debug.Log("Donut");
-          }
-          else 
-          {
-              
+              checker.SetActive(false);
+              Debug.Log("Correct");
           }
          
          
