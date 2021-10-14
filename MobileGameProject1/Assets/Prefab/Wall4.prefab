@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3516739649214305566}
   - component: {fileID: 2768558205828427561}
   - component: {fileID: 5852211841549258548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 0}
-  speed: 70
-  activated: 0
+  speed: 80
+  activated: 1
   shapeActivated: 0
   Cone1: {fileID: 3516739649214305566}
   Cube1: {fileID: 5852211841549258548}

@@ -59,6 +59,12 @@ public class PlayerController : MonoBehaviour
         }
     
     }
+    private void OnCollisionExit(Collision collision) {
+         
+              StartCoroutine("ShapePicker");
+              Debug.Log("ShapeChange");
+          
+      }
 
      IEnumerator ShapePicker()
         {

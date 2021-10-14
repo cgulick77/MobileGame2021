@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wall : MonoBehaviour
 {
     public GameObject wall;
-    public float   speed = 70f;
+    public float   speed = 80f;
      Rigidbody wRb;
 
     public bool activated;
@@ -20,6 +20,7 @@ public class Wall : MonoBehaviour
     public GameObject checker;
 
     void Awake() {
+        playerController = GameObject.Find("PlayerController");
         playerControllerScript = playerController.GetComponent<PlayerController>();
         shapeCheckerScript = checker.GetComponent<ShapeChecker>();
     }
@@ -28,10 +29,7 @@ public class Wall : MonoBehaviour
     {
         wRb = GetComponent<Rigidbody>();
         //activated = true;
-
-         
     }
-
     // Update is called once per frame
     // Enable all the 
     void Update()
@@ -59,9 +57,6 @@ public class Wall : MonoBehaviour
                 Donut1.enabled = true;
                 break;
         }
-
-     
-
     }
 
     // Detects when the player collides with the correct hole for its shape
@@ -71,9 +66,19 @@ public class Wall : MonoBehaviour
               checker.SetActive(false);
               Debug.Log("Correct");
           }
-         
-         
+
+          if (collision.gameObject.layer == 9)
+          {
+              Destroy(gameObject);
+          }
       }
 
+      private void OnCollisionExit(Collision collision) {
+         
+              playerControllerScript.StartCoroutine("ShapePicker");
+              
+          
+      }
       //Add an OnCollisionExit
+      
 }
