@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class PlayerController : MonoBehaviour
     public GameObject Cube;
     public GameObject Donut;
     public int playerShape;
+
+    private bool cooldown;
+    
+    public Text directionText; //Touch Controls
+    private Touch theTouch;
+    private Vector2 touchStartPosition, touchEndPosition;
+    private string direction;
     
 
 
@@ -36,10 +44,48 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //TOUCH CONTROLS
+           if (Input.touchCount > 0)
+        {
+            theTouch = Input.GetTouch(0);
+
+            if (theTouch.phase == TouchPhase.Began)
+            {
+                touchStartPosition = theTouch.position; 
+            }else if (theTouch.phase == TouchPhase.Moved || theTouch.phase == TouchPhase.Ended)
+            {
+                touchEndPosition = theTouch.position;
+
+                float x = touchEndPosition.x - touchStartPosition.x;
+                float y = touchEndPosition.y - touchEndPosition.x;
+
+                if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0)
+                {
+                    direction = "Tapped";
+                }else if (Mathf.Abs(x) > Mathf.Abs(y))
+                {
+                    //conditional operator expression
+                    direction = x > 0 ? "Right" : "Left";   //if this boolean is true it will preform "right" otherwise "Left"
+                }
+                else
+                {
+                    direction = y > 0 ? "Up" : "Down";
+                }
+                
+                
+            }
+        }
+
+        directionText.text = direction;
+        // Touch Controls :https://learn.unity.com/tutorial/touch-input-for-mobile-scripting-2019#5dfba291edbc2a1a9859b892
+
         //Get player input and player movement on the lanes
-        if(Input.GetKeyDown(KeyCode.A)){
+        
+        if(Input.GetKeyDown(KeyCode.A) || (direction == "Left") && cooldown == false){
             if(player.transform.position == posMid.transform.position){
                 player.transform.position = posLeft.transform.position;
+                cooldown = true;
+                Invoke("CoolDownChecker", 1.0f);
 
             }
             else if (player.transform.position == posRight.transform.position){
@@ -47,25 +93,28 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        if(Input.GetKeyDown(KeyCode.D)){
+        if(Input.GetKeyDown(KeyCode.D) || (direction == "Right") && cooldown == false){
             if(player.transform.position == posMid.transform.position){
                 player.transform.position = posRight.transform.position;
 
             }
             else if (player.transform.position == posLeft.transform.position){
                 player.transform.position = posMid.transform.position;
+                cooldown = true;
+                Invoke("CoolDownChecker", 0.5f);
 
             }
         }
     
     }
-    private void OnCollisionExit(Collision collision) {
-         
-              StartCoroutine("ShapePicker");
-              Debug.Log("ShapeChange");
-          
-      }
 
+    private void CoolDownChecker()
+    {
+        cooldown = false;
+    }
+
+    
+    
      IEnumerator ShapePicker()
         {
              // Uses Random.Range to pick the shape. Thne uses a switch statement to activate the shape and keep the other deactivated.
