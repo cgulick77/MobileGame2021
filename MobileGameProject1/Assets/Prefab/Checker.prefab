@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallChecker: {fileID: 5095798445664669643}
+  wrong: 0
+  gameManager: {fileID: 0}
 --- !u!65 &5095798445664669643
 BoxCollider:
   m_ObjectHideFlags: 0

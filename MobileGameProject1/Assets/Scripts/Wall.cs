@@ -18,11 +18,16 @@ public class Wall : MonoBehaviour
     private int holeNum;
     private ShapeChecker shapeCheckerScript;
     public GameObject checker;
+    private GameManager gameManager;
+    
+   
+
 
     void Awake() {
         playerController = GameObject.Find("PlayerController");
         playerControllerScript = playerController.GetComponent<PlayerController>();
         shapeCheckerScript = checker.GetComponent<ShapeChecker>();
+        //gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -64,6 +69,7 @@ public class Wall : MonoBehaviour
           if (collision.gameObject.layer == 8)
           {
               checker.SetActive(false);
+              //gameManager.ScoreUpdate();
               Debug.Log("Correct");
           }
 

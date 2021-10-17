@@ -11,20 +11,16 @@ public class WallSpawner : MonoBehaviour
     public bool activated;
     private Wall wallscript;
     public int wallLimit = 0;
-
     public float startDelay = 1.0f;
     public float repeatRate = 0.0000001f;
-
     public bool spawnReady;
-   
-
+    
     // Start is called before the first frame update
     void Start()
     {
         wallscript = GetComponent<Wall>();
         spawnReady = true;
         //InvokeRepeating("WallRando", startDelay, repeatRate);
-        
     }
 
     // Update is called once per frame
@@ -45,11 +41,8 @@ public class WallSpawner : MonoBehaviour
            maxWalls = true;
             break;
         }
-        
-        
-    }
-  
 
+    }
         void WallRando()
         {
             int randomWall = Random.Range(0, walls.Length);
@@ -64,11 +57,8 @@ public class WallSpawner : MonoBehaviour
                  spawnReady = false;
                 yield return new WaitForSeconds(1);
                 spawnReady = true;
-
-
             }
-           
-           
+
         }
 
 }

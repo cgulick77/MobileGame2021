@@ -18,12 +18,13 @@ public class PlayerController : MonoBehaviour
     public GameObject Donut;
     public int playerShape;
 
-    private bool cooldown;
+    public bool cooldown;
     
     public Text directionText; //Touch Controls
     private Touch theTouch;
     private Vector2 touchStartPosition, touchEndPosition;
     private string direction;
+    private float coolDownSpeed = .2f;
     
 
 
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         //Sets players position to the middle lane and sets its initial shape
         player.transform.position = posMid.transform.position;
         StartCoroutine("ShapePicker");
+        cooldown = false;
         
     }
 
@@ -81,36 +83,47 @@ public class PlayerController : MonoBehaviour
 
         //Get player input and player movement on the lanes
         
-        if(Input.GetKeyDown(KeyCode.A) || (direction == "Left") && cooldown == false){
-            if(player.transform.position == posMid.transform.position){
+        if(Input.GetKeyDown(KeyCode.A) || (direction == "Left")  && (cooldown == false)){
+            if((player.transform.position == posMid.transform.position))
+            {
                 player.transform.position = posLeft.transform.position;
-                cooldown = true;
-                Invoke("CoolDownChecker", 1.0f);
-
+                 cooldown = true;
+                 Invoke("CoolDownChecker", coolDownSpeed);
             }
-            else if (player.transform.position == posRight.transform.position){
-                player.transform.position = posMid.transform.position;
-
+            else if ((player.transform.position == posRight.transform.position)){
+                 player.transform.position = posMid.transform.position;
+                 cooldown = true;
+                 Invoke("CoolDownChecker", coolDownSpeed);
+                 
+                
             }
+            Invoke("CoolDownChecker", coolDownSpeed);
         }
-        if(Input.GetKeyDown(KeyCode.D) || (direction == "Right") && cooldown == false){
-            if(player.transform.position == posMid.transform.position){
+        if(Input.GetKeyDown(KeyCode.D) || (direction == "Right") && (cooldown == false)){
+            if((player.transform.position == posMid.transform.position)){
                 player.transform.position = posRight.transform.position;
-
-            }
-            else if (player.transform.position == posLeft.transform.position){
-                player.transform.position = posMid.transform.position;
                 cooldown = true;
-                Invoke("CoolDownChecker", 0.5f);
-
+                 Invoke("CoolDownChecker", coolDownSpeed);
+                
+                
             }
+            else if ((player.transform.position == posLeft.transform.position)){
+                  player.transform.position = posMid.transform.position;
+                  cooldown = true;
+                  Invoke("CoolDownChecker", coolDownSpeed);
+                  
+            }
+            
+                
         }
+        
     
     }
 
     private void CoolDownChecker()
     {
         cooldown = false;
+        direction = "";
     }
 
     

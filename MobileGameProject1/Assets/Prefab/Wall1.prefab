@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 2832530444103363888}
-  speed: 80
+  speed: 75
   activated: 1
   shapeActivated: 0
   Cone1: {fileID: 273146078}
