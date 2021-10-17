@@ -10,12 +10,12 @@ public class ShapeChecker : MonoBehaviour
     
     public Collider wallChecker;
     public bool wrong;
-    private GameManager gameManager;
+    private GameManager gameManagerScript;
     
     // Start is called before the first frame update
     void Start()
     {
-        //gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManagerScript = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class ShapeChecker : MonoBehaviour
     private void OnCollisionEnter(Collision collision) {
         Debug.Log("Wrong");
         wrong = true;
-        //gameManager.LiveUpdate();
+        gameManagerScript.LiveUpdate();
         
     }
 }

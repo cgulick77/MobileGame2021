@@ -5,7 +5,6 @@ using UnityEngine;
 public class Wall : MonoBehaviour
 {
     public GameObject wall;
-    public float   speed = 80f;
      Rigidbody wRb;
 
     public bool activated;
@@ -18,7 +17,7 @@ public class Wall : MonoBehaviour
     private int holeNum;
     private ShapeChecker shapeCheckerScript;
     public GameObject checker;
-    private GameManager gameManager;
+    private GameManager gameManagerScript;
     
    
 
@@ -27,7 +26,7 @@ public class Wall : MonoBehaviour
         playerController = GameObject.Find("PlayerController");
         playerControllerScript = playerController.GetComponent<PlayerController>();
         shapeCheckerScript = checker.GetComponent<ShapeChecker>();
-        //gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManagerScript = FindObjectOfType<GameManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,7 @@ public class Wall : MonoBehaviour
     void Update()
     {
         if (activated == true){
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.Translate(Vector3.right * Time.deltaTime * gameManagerScript.speed);
             //Debug.Log("Hello");
               
         }
@@ -69,8 +68,8 @@ public class Wall : MonoBehaviour
           if (collision.gameObject.layer == 8)
           {
               checker.SetActive(false);
-              //gameManager.ScoreUpdate();
-              Debug.Log("Correct");
+              gameManagerScript.ScoreUpdate();
+              //Debug.Log("Correct");
           }
 
           if (collision.gameObject.layer == 9)

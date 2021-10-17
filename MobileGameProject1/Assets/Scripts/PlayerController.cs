@@ -73,8 +73,6 @@ public class PlayerController : MonoBehaviour
                 {
                     direction = y > 0 ? "Up" : "Down";
                 }
-                
-                
             }
         }
 
@@ -82,6 +80,7 @@ public class PlayerController : MonoBehaviour
         // Touch Controls :https://learn.unity.com/tutorial/touch-input-for-mobile-scripting-2019#5dfba291edbc2a1a9859b892
 
         //Get player input and player movement on the lanes
+        //If player swiped left/right moves the player to the correct lane.
         
         if(Input.GetKeyDown(KeyCode.A) || (direction == "Left")  && (cooldown == false)){
             if((player.transform.position == posMid.transform.position))
@@ -113,21 +112,14 @@ public class PlayerController : MonoBehaviour
                   Invoke("CoolDownChecker", coolDownSpeed);
                   
             }
-            
-                
         }
-        
-    
     }
 
     private void CoolDownChecker()
     {
         cooldown = false;
-        direction = "";
+        direction = ""; //Sets direction to basically a empty string to clear it so it doesnt stay the same.
     }
-
-    
-    
      IEnumerator ShapePicker()
         {
              // Uses Random.Range to pick the shape. Thne uses a switch statement to activate the shape and keep the other deactivated.

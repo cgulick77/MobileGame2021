@@ -163,6 +163,7 @@ MonoBehaviour:
   Donut1: {fileID: 3486203431872665720}
   playerController: {fileID: 0}
   checker: {fileID: 4320812957038194283}
+  gameManager: {fileID: 0}
 --- !u!1001 &8250471668218677524
 PrefabInstance:
   m_ObjectHideFlags: 0
