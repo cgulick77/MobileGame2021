@@ -155,7 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 0}
-  speed: 75
   activated: 1
   shapeActivated: 0
   Cone1: {fileID: 3820414671563207537}
@@ -163,7 +162,7 @@ MonoBehaviour:
   Donut1: {fileID: 7479332476607582083}
   playerController: {fileID: 0}
   checker: {fileID: 5565569612154573135}
-  gameManager: {fileID: 0}
+  holeSource: {fileID: 0}
 --- !u!1001 &339437012230436400
 PrefabInstance:
   m_ObjectHideFlags: 0

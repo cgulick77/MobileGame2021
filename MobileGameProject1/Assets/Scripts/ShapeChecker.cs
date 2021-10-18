@@ -11,11 +11,13 @@ public class ShapeChecker : MonoBehaviour
     public Collider wallChecker;
     public bool wrong;
     private GameManager gameManagerScript;
+    private SoundManager soundManagerScript;
     
     // Start is called before the first frame update
     void Start()
     {
         gameManagerScript = FindObjectOfType<GameManager>();
+        soundManagerScript = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -25,9 +27,10 @@ public class ShapeChecker : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        Debug.Log("Wrong");
+        //Debug.Log("Wrong");
         wrong = true;
         gameManagerScript.LiveUpdate();
+        //soundManagerScript.PlaySound("Hole");
         
     }
 }

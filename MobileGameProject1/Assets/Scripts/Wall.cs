@@ -19,6 +19,7 @@ public class Wall : MonoBehaviour
     public GameObject checker;
     private GameManager gameManagerScript;
     
+    
    
 
 
@@ -67,6 +68,7 @@ public class Wall : MonoBehaviour
       private void OnCollisionEnter(Collision collision) {
           if (collision.gameObject.layer == 8)
           {
+              
               checker.SetActive(false);
               gameManagerScript.ScoreUpdate();
               //Debug.Log("Correct");
@@ -75,6 +77,7 @@ public class Wall : MonoBehaviour
           if (collision.gameObject.layer == 9)
           {
               Destroy(gameObject);
+              
           }
       }
 

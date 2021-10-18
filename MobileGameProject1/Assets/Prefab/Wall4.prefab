@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 0}
-  speed: 75
   activated: 1
   shapeActivated: 0
   Cone1: {fileID: 3516739649214305566}
@@ -124,6 +123,7 @@ MonoBehaviour:
   Donut1: {fileID: 2768558205828427561}
   playerController: {fileID: 0}
   checker: {fileID: 1441525161117766879}
+  holeSource: {fileID: 0}
 --- !u!65 &3516739649214305566
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -20,11 +20,12 @@ public class PlayerController : MonoBehaviour
 
     public bool cooldown;
     
-    public Text directionText; //Touch Controls
+    //public Text directionText; //Touch Controls
     private Touch theTouch;
     private Vector2 touchStartPosition, touchEndPosition;
     private string direction;
     private float coolDownSpeed = .2f;
+    public AudioSource holeSource;
     
 
 
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         player.transform.position = posMid.transform.position;
         StartCoroutine("ShapePicker");
         cooldown = false;
+        holeSource = GetComponent<AudioSource>();
         
     }
 
@@ -76,7 +78,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        directionText.text = direction;
+        //directionText.text = direction;
         // Touch Controls :https://learn.unity.com/tutorial/touch-input-for-mobile-scripting-2019#5dfba291edbc2a1a9859b892
 
         //Get player input and player movement on the lanes
@@ -88,11 +90,13 @@ public class PlayerController : MonoBehaviour
                 player.transform.position = posLeft.transform.position;
                  cooldown = true;
                  Invoke("CoolDownChecker", coolDownSpeed);
+                 holeSource.Play();
             }
             else if ((player.transform.position == posRight.transform.position)){
                  player.transform.position = posMid.transform.position;
                  cooldown = true;
                  Invoke("CoolDownChecker", coolDownSpeed);
+                 holeSource.Play();
                  
                 
             }
@@ -103,6 +107,7 @@ public class PlayerController : MonoBehaviour
                 player.transform.position = posRight.transform.position;
                 cooldown = true;
                  Invoke("CoolDownChecker", coolDownSpeed);
+                 holeSource.Play();
                 
                 
             }
@@ -110,6 +115,7 @@ public class PlayerController : MonoBehaviour
                   player.transform.position = posMid.transform.position;
                   cooldown = true;
                   Invoke("CoolDownChecker", coolDownSpeed);
+                  holeSource.Play();
                   
             }
         }
